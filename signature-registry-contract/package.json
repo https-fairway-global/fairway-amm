@@ -1,0 +1,30 @@
+{
+  "name": "@fairway/signature-registry-contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "compact": "/Users/fairway-01/Downloads/compactc-macos/compactc.bin src/registry.compact ./src/managed/registry",
+    "test": "jest",
+    "prepack": "yarn build",
+    "build": "rm -rf dist && tsc --build && cp -Rf ./src/managed ./dist/managed && cp ./src/registry.compact ./dist",
+    "lint": "eslint src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@midnight-ntwrk/compact": "link:../compact",
+    "eslint": "^8.52.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.2.2"
+  }
+}

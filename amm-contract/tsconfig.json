@@ -1,0 +1,24 @@
+// Placeholder: Add tsconfig.json content for amm-contract.
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "emitDeclarationOnly": false
+    // If this contract imports types/values from signature-registry-contract,
+    // add a reference here:
+    // "references": [{ "path": "../signature-registry-contract" }]
+  },
+  "include": [
+    "src/**/*",
+    "src/generated/contract/index.d.cts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+} // Example Structure 
